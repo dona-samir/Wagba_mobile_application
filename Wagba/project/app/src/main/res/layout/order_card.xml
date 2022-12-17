@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/offwhite"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/circular_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="115dp">
+
+            <ImageView
+                android:id="@+id/restaurant_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="7dp"
+                app:srcCompat="@drawable/pizza_hut_logo" />
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10">
+
+            <TextView
+                android:id="@+id/order_restaurant_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toStartOf="@+id/open_btn"
+                android:text="@string/title"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/order_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/order_restaurant_title"
+                android:layout_alignStart="@id/order_restaurant_title"
+                android:layout_alignEnd="@id/order_restaurant_title"
+                android:text="@string/order_status"
+                android:textColor="@color/yellow"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/order_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/order_status"
+                android:layout_alignStart="@id/order_restaurant_title"
+                android:layout_alignEnd="@id/order_restaurant_title"
+                android:text="@string/order_date"
+                android:textColor="#616161"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/open_btn"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="0dp"
+                android:backgroundTint="@color/offwhite"
+                android:contentDescription="@string/forward_btn"
+                android:scaleType="center"
+                app:srcCompat="@drawable/forward" />
+
+            <TextView
+                android:id="@+id/order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/order_sid_title"
+                android:layout_alignEnd="@id/order_restaurant_title"
+                android:layout_alignBottom="@id/order_sid_title"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/order_sid_title"
+                android:text="@string/id"
+                android:textColor="#616161" />
+
+            <TextView
+                android:id="@+id/order_sid_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/order_date"
+                android:layout_alignStart="@id/order_restaurant_title"
+                android:text="@string/order_id"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

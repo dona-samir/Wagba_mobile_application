@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/offwhite"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:padding="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/meal_img"
+            android:layout_width="104dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="TODO"
+            android:scaleType="centerCrop"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@drawable/meal" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignBottom="@id/add_btn"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/textView2"
+            android:backgroundTint="#31A40E4C"
+            android:contentDescription="@string/remove_btn"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/minus" />
+
+        <TextView
+            android:id="@+id/meal_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@+id/meal_img"
+            android:text="@string/title"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/meal_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meal_title"
+            android:layout_alignEnd="@id/meal_title"
+            android:layout_centerVertical="true"
+            android:text="@string/details"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/meal_price"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_below="@id/meal_img"
+            android:layout_alignEnd="@+id/meal_img"
+            android:layout_alignParentBottom="false"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="@string/price"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/meal_EGP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/meal_price"
+            android:layout_alignBottom="@id/meal_price"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/meal_price"
+            android:gravity="center"
+            android:text="@string/EGP"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/add_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignBottom="@id/meal_price"
+            android:backgroundTint="#31A40E4C"
+            android:contentDescription="@string/add_btn"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/add2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/add_btn"
+            android:layout_alignBottom="@id/add_btn"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@+id/add_btn"
+            android:background="@drawable/corner"
+            android:backgroundTint="@color/lightpurple"
+            android:gravity="center"
+            android:minWidth="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/number"
+            android:textColor="@color/purple" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

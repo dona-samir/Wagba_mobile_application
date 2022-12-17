@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/offwhite"
+    android:backgroundTint="@color/offwhite"
+    tools:context=".main">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="true"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/hi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:keepScreenOn="true"
+                android:nestedScrollingEnabled="true"
+                android:overScrollMode="never"
+                android:padding="10dp"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollHorizontally="false"
+                android:text="Hello "
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+
+            <SearchView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/search_bar"
+                android:queryHint="search here ..."
+                android:searchIcon="@drawable/search">
+
+            </SearchView>
+
+            <TextView
+                android:id="@+id/feature_meal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:keepScreenOn="true"
+                android:nestedScrollingEnabled="true"
+                android:overScrollMode="never"
+                android:padding="10dp"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollHorizontally="false"
+                android:text="featured meals"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/featured_meal_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/featured_meal" />
+
+            <TextView
+                android:id="@+id/resturents_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:keepScreenOn="true"
+                android:nestedScrollingEnabled="true"
+                android:overScrollMode="never"
+                android:padding="10dp"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollHorizontally="false"
+                android:text="Restaurants"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resturent_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="3"
+                tools:listitem="@layout/resturant_card" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
