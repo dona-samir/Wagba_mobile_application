@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/restaurant_main_imgrestaurant_main_img"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.restaurant_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/offwhite"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/resturant_page_img"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pizza_hut_bg" />
+
+        <TextView
+            android:id="@+id/resturant_page_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:paddingStart="20dp"
+            android:text="@string/title"
+            android:textColor="@color/yellow"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/resturant_page_details"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight="1"
+            android:paddingStart="20dp"
+            android:text="@string/details"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/delivery_icon"
+                android:layout_width="49dp"
+                android:layout_height="19dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="0dp"
+                android:scaleType="center"
+                app:srcCompat="@drawable/fast_delivery" />
+
+            <TextView
+                android:id="@+id/delivery_egp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/delivery_icon"
+                android:text="@string/EGP" />
+
+            <TextView
+                android:id="@+id/restaurant_page_delivery_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/delivery_egp"
+                android:layout_alignBottom="@id/delivery_egp"
+                android:layout_centerHorizontal="true"
+                android:layout_toEndOf="@id/delivery_egp"
+                android:gravity="center"
+                android:text="@string/price" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/meals_listview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12"
+            tools:itemCount="3"
+            tools:listitem="@layout/meal_card" />
+
+    </LinearLayout>
+
+</FrameLayout>
