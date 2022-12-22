@@ -38,7 +38,7 @@
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:padding="15dp"
-        android:text="tarneem@gmail.com" />
+        android:text="test@gmail.com" />
 
     <EditText
         android:id="@+id/login_Password"
@@ -55,9 +55,7 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="15dp"
-        android:text="1234567"
-        android:textColor="#616161"
-        android:textColorHint="#616161" />
+        android:text="test@123456" />
 
     <Button
         android:id="@+id/btn_login"

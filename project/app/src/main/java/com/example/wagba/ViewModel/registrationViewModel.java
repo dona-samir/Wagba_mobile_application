@@ -6,25 +6,25 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.wagba.Model.AppRepository;
+import com.example.wagba.Model.registrationRepo;
 import com.google.firebase.auth.FirebaseUser;
 
-public class registration extends AndroidViewModel {
-    private AppRepository appRepository;
+public class registrationViewModel extends AndroidViewModel {
+    private registrationRepo signupRepo;
     private MutableLiveData<FirebaseUser> userlivedata;
 
 
-    public registration(@NonNull Application application) {
+    public registrationViewModel(@NonNull Application application) {
         super(application);
-        appRepository = new AppRepository(application);
-        userlivedata= appRepository.getUserlivedata();
+        signupRepo = new registrationRepo(application);
+        userlivedata= signupRepo.getUserlivedata();
     }
     public void signup(String email ,String password  ){
-        appRepository.signup(email,password);
+        signupRepo.signup(email,password);
     }
 
     public void login(String email ,String password ){
-        appRepository.login(email,password);
+        signupRepo.login(email,password);
     }
 
     public MutableLiveData<FirebaseUser> getUserlivedata() {

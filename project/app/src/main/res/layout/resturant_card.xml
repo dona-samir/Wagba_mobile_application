@@ -112,7 +112,7 @@
                 android:background="@color/white"
                 android:foregroundGravity="center_vertical"
                 android:padding="12dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/pizza_hut_logo" />
         </androidx.cardview.widget.CardView>
 

@@ -6,22 +6,22 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.wagba.Model.AppRepository;
+import com.example.wagba.Model.registrationRepo;
 import com.google.firebase.auth.FirebaseUser;
 
-public class signout extends AndroidViewModel {
-    private AppRepository appRepository;
+public class signoutViewModel extends AndroidViewModel {
+    private registrationRepo signupRepo;
     private MutableLiveData<FirebaseUser> userlivedata;
     private MutableLiveData<Boolean> looggedliverdata;
 
-    public signout(@NonNull Application application) {
+    public signoutViewModel(@NonNull Application application) {
         super(application);
-        appRepository = new AppRepository(application);
-        userlivedata= appRepository.getUserlivedata();
-        looggedliverdata = appRepository.getLooggedoutliverdata();
+        signupRepo = new registrationRepo(application);
+        userlivedata= signupRepo.getUserlivedata();
+        looggedliverdata = signupRepo.getLooggedoutliverdata();
     }
     public void signout(){
-        appRepository.signOut();
+        signupRepo.signOut();
     }
     public MutableLiveData<FirebaseUser> getUserlivedata() {
         return userlivedata;

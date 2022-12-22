@@ -20,13 +20,9 @@ import com.example.wagba.database.meal;
 import com.example.wagba.database.restaurant;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Pattern;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link search#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class search extends Fragment {
 
 
@@ -118,6 +114,7 @@ public class search extends Fragment {
                                                           searchresult.add(meal);
                                                       }
                                                   }
+                                                  Collections.shuffle(searchresult);
                                                   search_ad.notifyDataSetChanged();
                                                   Log.d("heyyyyy", searchresult.toString());
                                                   return false;

@@ -44,7 +44,7 @@ public class meal extends card_restaurent_meal {
 
     @Override
     public String toString() {
-        return "meal{" +
+        return "meal{" +super.toString()+
                 "price='" + price + '\'' +
                 ", id='" + id + '\'' +
                 ", restaurant_id='" + restaurant_id + '\'' +

@@ -1,12 +1,10 @@
 package com.example.wagba.Model;
 
 import android.app.Application;
-import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,14 +13,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class AppRepository {
+public class registrationRepo {
     private Application app;
     private FirebaseAuth firebaseauth;
     private MutableLiveData<FirebaseUser> userlivedata;
     private MutableLiveData<Boolean> looggedoutliverdata;
 
 
-    public AppRepository(Application app) {
+    public registrationRepo(Application app) {
         this.app = app;
         firebaseauth = FirebaseAuth.getInstance();
         userlivedata = new MutableLiveData<>();
@@ -37,8 +35,8 @@ public class AppRepository {
                 if(task.isSuccessful()){
                    userlivedata.postValue(firebaseauth.getCurrentUser());
                }else{
-                   Toast.makeText(app, "registration faild", Toast.LENGTH_SHORT).show();
-                    Log.d("login","registration faild"+task.getException().getMessage().toString());
+                   Toast.makeText(app, "registrationViewModel faild", Toast.LENGTH_SHORT).show();
+                    Log.d("login","registrationViewModel faild"+task.getException().getMessage().toString());
 
                 }
             }

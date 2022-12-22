@@ -6,7 +6,6 @@ public class restaurant extends card_restaurent_meal{
     private String id ;
     private String delivery_fee;
     private String img_bg;
-    private ArrayList<meal> meals;
 
 
     public restaurant() {}
@@ -24,13 +23,6 @@ public class restaurant extends card_restaurent_meal{
         this.img_bg = img_bg;
     }
 
-    public ArrayList<meal> getMeals() {
-        return meals;
-    }
-
-    public void setMeals(ArrayList<meal> meals) {
-        this.meals = meals;
-    }
 
     public String getId() {
         return id;

@@ -13,14 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wagba.R;
-import com.example.wagba.ViewModel.registration;
+import com.example.wagba.ViewModel.registrationViewModel;
 import com.google.firebase.auth.FirebaseUser;
 
 public class login extends AppCompatActivity {
     private EditText email_EditText;
     private EditText password_EditText;
     private Button login_btn;
-    private registration RegistrationViewModel;
+    private registrationViewModel RegistrationViewModel;
     private TextView signup;
 
 
@@ -33,12 +33,12 @@ public class login extends AppCompatActivity {
         password_EditText =findViewById(R.id.login_Password);
         login_btn = findViewById(R.id.btn_login);
         signup=findViewById(R.id.login_signup);
-        RegistrationViewModel = new ViewModelProvider(this).get(registration.class);
+        RegistrationViewModel = new ViewModelProvider(this).get(registrationViewModel.class);
         RegistrationViewModel.getUserlivedata().observe(this, new Observer<FirebaseUser>() {
                     @Override
                     public void onChanged(FirebaseUser firebaseUser) {
                         if(firebaseUser != null){
-                            startActivity(new Intent(login.this, Home.class));
+                            startActivity(new Intent(login.this, Main.class));
                         }
                     }
                 }
@@ -46,6 +46,7 @@ public class login extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(new Intent(login.this, signup.class));
 
             }

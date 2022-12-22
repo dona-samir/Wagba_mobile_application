@@ -39,4 +39,13 @@ public class card_restaurent_meal {
     public void setDetails(String details) {
         this.details = details;
     }
+
+    @Override
+    public String toString() {
+        return "card_restaurent_meal{" +
+                "name='" + name + '\'' +
+                ", details='" + details + '\'' +
+                ", img='" + img + '\'' +
+                '}';
+    }
 }

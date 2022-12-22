@@ -1,4 +1,4 @@
-package com.example.wagba;
+package com.example.wagba.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,15 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.wagba.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Home extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class Main extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.nav_bar);
 
@@ -23,7 +24,7 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
     }
     orders order = new orders();
     profile profile = new profile();
-    main home = new main();
+    Home home = new Home();
     Cart cart = new Cart();
 
     @Override
@@ -43,6 +44,7 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
 
             case R.id.cart_icon:
                 getSupportFragmentManager().beginTransaction().replace(R.id.container, cart).commit();
+                return true;
 
 
         }
