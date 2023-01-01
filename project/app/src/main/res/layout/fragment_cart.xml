@@ -28,7 +28,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/resturant_title"
+            android:id="@+id/add_to_cart_resturant_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/Cart"
@@ -41,7 +41,7 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/resturant_title"
+            android:layout_below="@id/add_to_cart_resturant_title"
             android:fillViewport="true">
 
             <LinearLayout
@@ -112,7 +112,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/cart_price"
+                        android:id="@+id/add_to_cart_cart_total"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/payment_details"
@@ -129,10 +129,10 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/restaurant_page_delivery_price"
+                        android:id="@+id/add_to_cart_delivery_fee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/cart_price"
+                        android:layout_below="@id/add_to_cart_cart_total"
                         android:layout_alignEnd="@id/payment_details"
                         android:layout_alignBottom="@id/delivery_fee"
                         android:layout_alignParentRight="false"
@@ -148,7 +148,7 @@
                         android:id="@+id/Total_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/restaurant_page_delivery_price"
+                        android:layout_below="@id/add_to_cart_delivery_fee"
                         android:layout_alignStart="@id/delivery_fee"
                         android:layout_marginTop="10dp"
                         android:text="@string/total_price"
@@ -157,11 +157,11 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/total_price"
+                        android:id="@+id/add_to_cart_total_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/restaurant_page_delivery_price"
-                        android:layout_alignRight="@id/cart_price"
+                        android:layout_below="@id/add_to_cart_delivery_fee"
+                        android:layout_alignRight="@id/add_to_cart_cart_total"
                         android:layout_alignBottom="@id/Total_price"
                         android:layout_marginTop="10dp"
                         android:gravity="center"
@@ -171,11 +171,11 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/check_out"
+                        android:id="@+id/add_to_cart_check_out"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/total_price"
-                        android:layout_alignEnd="@id/total_price"
+                        android:layout_below="@id/add_to_cart_total_price"
+                        android:layout_alignEnd="@id/add_to_cart_total_price"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="15dp"

@@ -25,8 +25,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@+id/meal_EGP"
                 android:text="@string/title"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/meal_card_title"
                 android:layout_alignStart="@id/meal_card_title"
-                android:layout_alignEnd="@id/meal_card_title"
+                android:layout_toStartOf="@+id/meal_EGP"
                 android:text="@string/details"
                 android:textSize="16sp" />
 

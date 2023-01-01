@@ -1,7 +1,6 @@
 package com.example.wagba.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -11,10 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.lifecycle.Observer;
 
+import com.example.wagba.Model.users;
 import com.example.wagba.ViewModel.registrationViewModel;
 import com.example.wagba.R;
-import com.example.wagba.database.users;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -45,7 +45,6 @@ public class signup extends AppCompatActivity {
         confirm_password_EditText =findViewById(R.id.signup_confirm);
         sign_up_btn =findViewById(R.id.btn_sign);
         accountexists =findViewById(R.id.login_accountexists);
-
         RegistrationViewModel = new ViewModelProvider(this).get(registrationViewModel.class);
         RegistrationViewModel.getUserlivedata().observe(this, new Observer<FirebaseUser>() {
                     @Override
@@ -88,7 +87,7 @@ public class signup extends AppCompatActivity {
                     Toast.makeText(signup.this, "password didn't match ", Toast.LENGTH_SHORT).show();
 
                 }else{
-                    RegistrationViewModel.signup(email,password);
+                    RegistrationViewModel.signup(email,password ,name , phone_no);
                 }
             }
         });

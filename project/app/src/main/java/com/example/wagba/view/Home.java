@@ -16,9 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 
+import com.example.wagba.Model.card_restaurent_meal;
+import com.example.wagba.Model.meal;
+import com.example.wagba.Model.restaurant;
 import com.example.wagba.R;
 import com.example.wagba.ViewModel.*;
-import com.example.wagba.database.*;
 
 
 import java.util.ArrayList;
@@ -37,6 +39,8 @@ public class Home extends Fragment {
     mealViewModel mealViewModel;
     featured_meal_adapter meals_ad;
     SearchView searchView;
+    ArrayList<meal> ordermeal;
+
 
 
     public Home() {
@@ -48,12 +52,27 @@ public class Home extends Fragment {
         return fragment;
     }
 
+    public ArrayList<meal> getOrdermeal() {
+        return ordermeal;
+    }
+
+    public void setOrdermeal(ArrayList<meal> ordermeal) {
+        this.ordermeal = ordermeal;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
 
+    public ArrayList<restaurant> getRestaurantslist() {
+        return restaurantslist;
+    }
+
+    public void setRestaurantslist(ArrayList<restaurant> restaurantslist) {
+        this.restaurantslist = restaurantslist;
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -83,7 +102,7 @@ public class Home extends Fragment {
                         search.add(meal);
                     }
                 }
-                search searchpage = new search();
+                search searchpage = new search(ordermeal);
                 searchpage.setRestaurantslist(restaurantslist);
                 searchpage.setMealslist(mealslist);
                 Collections.shuffle(search);
@@ -118,6 +137,7 @@ public class Home extends Fragment {
                         if (restaurants != null) {
                             restaurant_page restaurant_page = new restaurant_page();
                             restaurant_page.setmParam1(restaurants.get(position));
+                            restaurant_page.setOrdermeal(ordermeal);
                             getParentFragmentManager().beginTransaction().replace(R.id.container, restaurant_page).commit();
                         }
                     }
@@ -141,6 +161,7 @@ public class Home extends Fragment {
                         if (meals != null) {
                             restaurant_page restaurant_page = new restaurant_page();
                             restaurant_page.setmParam1(restaurantslist.get((Integer.valueOf(meals.get(position).getRestaurant_id()))));
+                            restaurant_page.setOrdermeal(ordermeal);
 
                             getParentFragmentManager().beginTransaction().replace(R.id.container, restaurant_page).commit();
                         }
@@ -150,7 +171,6 @@ public class Home extends Fragment {
         });
 
         View view = inflater.inflate(R.layout.fargment_home, container, false);
-        // Inflate the layout for this fragment
         return view;
     }
 }

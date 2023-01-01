@@ -1,4 +1,4 @@
-package com.example.wagba.database;
+package com.example.wagba.Model;
 
 public class order {
 
@@ -19,7 +19,7 @@ public class order {
 //        return restaurant.getName();
 //    }
 
-//    public void setRestaurant(com.example.wagba.database.restaurant restaurant) {
+//    public void setRestaurant(com.example.wagba.Model.restaurant restaurant) {
 //        this.restaurant = restaurant;
 //    }
 
@@ -48,7 +48,7 @@ public class order {
         this.order_status = order_status;
     }
 
-//    public order(com.example.wagba.database.restaurant restaurant, String order_id, String order_date, String order_status) {
+//    public order(com.example.wagba.Model.restaurant restaurant, String order_id, String order_date, String order_status) {
 //        this.restaurant = restaurant;
 //        this.order_id = order_id;
 //        this.order_date = order_date;

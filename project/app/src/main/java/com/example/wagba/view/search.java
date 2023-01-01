@@ -5,19 +5,22 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 
 import com.example.wagba.R;
-import com.example.wagba.database.card_restaurent_meal;
-import com.example.wagba.database.meal;
-import com.example.wagba.database.restaurant;
+import com.example.wagba.Model.card_restaurent_meal;
+import com.example.wagba.Model.meal;
+import com.example.wagba.Model.restaurant;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,6 +35,8 @@ public class search extends Fragment {
     ArrayList<meal> mealslist ;
     SearchView searchView;
     search_adapter search_ad ;
+    ArrayList<meal> ordermeal;
+
 
     public RecyclerView getRecyclerView() {
         return recyclerView;
@@ -73,15 +78,11 @@ public class search extends Fragment {
         this.searchresult = searchresult;
     }
 
-    public search() {
+    public search(ArrayList<meal> ordermeal) {
+        this.ordermeal = ordermeal;
         // Required empty public constructor
     }
 
-    public static search newInstance( ) {
-        search fragment = new search();
-
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -109,7 +110,7 @@ public class search extends Fragment {
                                                           searchresult.add(res);
                                                       }
                                                   }
-                                                  for (com.example.wagba.database.meal meal : mealslist) {
+                                                  for (com.example.wagba.Model.meal meal : mealslist) {
                                                       if (pattern.matcher(meal.getName().toLowerCase()).find() || pattern.matcher(meal.getDetails().toLowerCase()).find()) {
                                                           searchresult.add(meal);
                                                       }
@@ -137,8 +138,27 @@ public class search extends Fragment {
                     }else{
                         restaurant_page.setmParam1(restaurantslist.get(Integer.valueOf(((meal) searchresult.get(position)).getRestaurant_id())));
                     }
+                    restaurant_page.setOrdermeal(ordermeal);
                     getParentFragmentManager().beginTransaction().replace(R.id.container, restaurant_page).commit();
                 }
+            }
+        });
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if( keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                    for(int i = 0; i < fm.getBackStackEntryCount()-1; ++i) {
+                        fm.popBackStack();
+                    }
+                    BottomNavigationView bottomNavigationView;
+                    bottomNavigationView = (BottomNavigationView) getActivity().findViewById(R.id.nav_bar);
+                    bottomNavigationView.setSelectedItemId(R.id.home);
+                    return true;
+                }
+                return false;
             }
         });
 

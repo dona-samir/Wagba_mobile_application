@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wagba.R;
-import com.example.wagba.database.meal;
+import com.example.wagba.Model.meal;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

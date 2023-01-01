@@ -11,12 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wagba.R;
-import com.example.wagba.database.restaurant;
+import com.example.wagba.Model.restaurant;
 import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class restaurant_adapter extends RecyclerView.Adapter<restaurant_adapter.ViewHolder> {
 

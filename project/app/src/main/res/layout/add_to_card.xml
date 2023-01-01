@@ -33,12 +33,12 @@
             tools:srcCompat="@drawable/meal" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/add_to_cart_remove_btn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_alignBottom="@id/add_btn"
+            android:layout_alignBottom="@id/add_to_cart_add_btn"
             android:layout_centerInParent="true"
-            android:layout_toEndOf="@id/textView2"
+            android:layout_toEndOf="@id/add_to_cart_meal_inumber"
             android:backgroundTint="#31A40E4C"
             android:contentDescription="@string/remove_btn"
             android:scaleType="centerInside"
@@ -48,12 +48,12 @@
             android:id="@+id/meal_card_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:layout_toStartOf="@+id/meal_card_img"
             android:text="@string/title"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -62,9 +62,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/meal_card_title"
             android:layout_alignEnd="@id/meal_card_title"
+            android:layout_alignBottom="@id/meal_card_img"
             android:layout_centerVertical="true"
             android:text="@string/details"
-            android:textSize="18sp" />
+            android:textSize="16sp"
+            app:autoSizeMaxTextSize="16sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform" />
 
         <TextView
             android:id="@+id/meal_card_price"
@@ -76,7 +80,7 @@
             android:layout_marginBottom="15dp"
             android:gravity="center"
             android:text="@string/price"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -89,28 +93,28 @@
             android:layout_toStartOf="@+id/meal_card_price"
             android:gravity="center"
             android:text="@string/EGP"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageButton
-            android:id="@+id/add_btn"
+            android:id="@+id/add_to_cart_add_btn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_alignBottom="@id/meal_card_price"
+            android:layout_alignBottom="@id/meal_EGP"
             android:backgroundTint="#31A40E4C"
             android:contentDescription="@string/add_btn"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/add2" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/add_to_cart_meal_inumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/add_btn"
-            android:layout_alignBottom="@id/add_btn"
+            android:layout_alignTop="@id/add_to_cart_add_btn"
+            android:layout_alignBottom="@id/add_to_cart_add_btn"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_toEndOf="@+id/add_btn"
+            android:layout_toEndOf="@+id/add_to_cart_add_btn"
             android:background="@drawable/corner"
             android:backgroundTint="@color/lightpurple"
             android:gravity="center"

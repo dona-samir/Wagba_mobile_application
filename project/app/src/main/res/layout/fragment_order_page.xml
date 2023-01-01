@@ -46,7 +46,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/meal_card_title"
+                    android:id="@+id/order_page_res_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -58,30 +58,30 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/order_status"
+                    android:id="@+id/order_page_order_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/meal_card_title"
-                    android:layout_alignStart="@id/meal_card_title"
+                    android:layout_below="@id/order_page_res_title"
+                    android:layout_alignStart="@id/order_page_res_title"
                     android:text="@string/order_status"
                     android:textColor="@color/yellow"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/order_status2"
+                    android:id="@+id/order_page_order_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/order_status"
-                    android:layout_alignStart="@id/meal_card_title"
+                    android:layout_below="@id/order_page_order_status"
+                    android:layout_alignStart="@id/order_page_res_title"
                     android:text="@string/order_date"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/order_page_order_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@id/order_sid_title"
-                    android:layout_alignEnd="@id/meal_card_title"
+                    android:layout_alignEnd="@id/order_page_res_title"
                     android:layout_alignBottom="@id/order_sid_title"
                     android:layout_marginStart="5dp"
                     android:layout_toEndOf="@id/order_sid_title"
@@ -91,8 +91,8 @@
                     android:id="@+id/order_sid_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/order_status2"
-                    android:layout_alignStart="@id/meal_card_title"
+                    android:layout_below="@id/order_page_order_date"
+                    android:layout_alignStart="@id/order_page_res_title"
                     android:layout_marginBottom="10dp"
                     android:text="@string/order_id"
                     android:textSize="16sp" />
@@ -127,7 +127,7 @@
                     android:id="@+id/pick_up_gate_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/order_pickup_time"
+                    android:layout_below="@id/order_page_time"
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/location_icon"
                     android:text="@string/pick_up_gate"
@@ -136,7 +136,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/order_pickup_time"
+                    android:id="@+id/order_page_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/pick_up_time_title"
@@ -171,7 +171,7 @@
                     app:srcCompat="@drawable/location" />
 
                 <TextView
-                    android:id="@+id/order_pickup_gate"
+                    android:id="@+id/order_page_gate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/pick_up_gate_title"
@@ -248,12 +248,12 @@
                     android:id="@+id/cart_total_egp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/cart_price"
-                    android:layout_alignBottom="@id/cart_price"
+                    android:layout_alignTop="@id/order_page_cart_price"
+                    android:layout_alignBottom="@id/order_page_cart_price"
                     android:layout_centerInParent="false"
                     android:layout_centerHorizontal="false"
                     android:layout_marginEnd="5dp"
-                    android:layout_toStartOf="@+id/cart_price"
+                    android:layout_toStartOf="@+id/order_page_cart_price"
                     android:gravity="center"
                     android:text="@string/EGP"
                     android:textSize="18sp" />
@@ -269,7 +269,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/cart_price"
+                    android:id="@+id/order_page_cart_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/payment_details"
@@ -288,21 +288,21 @@
                     android:id="@+id/delivery_fee_egp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/restaurant_page_delivery_price"
-                    android:layout_alignBottom="@id/restaurant_page_delivery_price"
+                    android:layout_alignTop="@id/order_page_delivery_price"
+                    android:layout_alignBottom="@id/order_page_delivery_price"
                     android:layout_centerInParent="false"
                     android:layout_centerHorizontal="false"
                     android:layout_marginRight="5dp"
-                    android:layout_toStartOf="@+id/restaurant_page_delivery_price"
+                    android:layout_toStartOf="@+id/order_page_delivery_price"
                     android:gravity="center"
                     android:text="@string/EGP"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/restaurant_page_delivery_price"
+                    android:id="@+id/order_page_delivery_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/cart_price"
+                    android:layout_below="@id/order_page_cart_price"
                     android:layout_alignEnd="@id/payment_details"
                     android:layout_alignBottom="@id/delivery_fee"
                     android:layout_alignParentEnd="false"
@@ -328,11 +328,11 @@
 
 
                 <TextView
-                    android:id="@+id/total_price"
+                    android:id="@+id/order_page_total_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/restaurant_page_delivery_price"
-                    android:layout_alignRight="@id/cart_price"
+                    android:layout_below="@id/order_page_delivery_price"
+                    android:layout_alignRight="@id/order_page_cart_price"
                     android:layout_alignBottom="@id/Total_price"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -345,12 +345,12 @@
                     android:id="@+id/total_egp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/total_price"
-                    android:layout_alignBottom="@id/total_price"
+                    android:layout_alignTop="@id/order_page_total_price"
+                    android:layout_alignBottom="@id/order_page_total_price"
                     android:layout_centerInParent="false"
                     android:layout_centerHorizontal="false"
                     android:layout_marginEnd="5dp"
-                    android:layout_toStartOf="@+id/total_price"
+                    android:layout_toStartOf="@+id/order_page_total_price"
                     android:gravity="center"
                     android:text="@string/EGP"
                     android:textColor="@color/black"
@@ -358,11 +358,11 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/place_order"
+                    android:id="@+id/order_page_place_order"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/total_price"
-                    android:layout_alignEnd="@id/total_price"
+                    android:layout_below="@id/order_page_total_price"
+                    android:layout_alignEnd="@id/order_page_total_price"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="@color/yellow"

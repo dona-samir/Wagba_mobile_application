@@ -1,14 +1,12 @@
 package com.example.wagba.ViewModel;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.wagba.database.restaurant;
+import com.example.wagba.Model.restaurant;
 import com.google.firebase.database.DatabaseError;
-import com.example.wagba.Model.resturantRepo;
+import com.example.wagba.Repositories.resturantRepo;
 
-import java.io.Closeable;
 import java.util.ArrayList;
 
 public class resturantViewModel extends ViewModel implements resturantRepo.OnRealtimeDbTaskComplete{
@@ -34,6 +32,9 @@ public class resturantViewModel extends ViewModel implements resturantRepo.OnRea
     }
 
 
+    public  void getAllData(String id){
+        RestaurantRepo.getAllData(id);
+    }
 
     @Override
     public void onSucesss(ArrayList<restaurant> restaurants) {

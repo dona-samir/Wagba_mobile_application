@@ -1,8 +1,8 @@
-package com.example.wagba.database;
+package com.example.wagba.Model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class restaurant extends card_restaurent_meal{
+public class restaurant extends card_restaurent_meal implements Serializable {
     private String id ;
     private String delivery_fee;
     private String img_bg;

@@ -8,16 +8,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wagba.Model.meal_order;
 import com.example.wagba.R;
-import com.example.wagba.database.meal;
+import com.example.wagba.Model.meal;
 
 import java.util.ArrayList;
 
 public class meal_past_order_adapter extends RecyclerView.Adapter<meal_past_order_adapter.viewholder> {
 
-    private ArrayList<meal> List = new ArrayList<>();
+    private ArrayList<meal_order> List = new ArrayList<>();
 
-    public meal_past_order_adapter(ArrayList<meal> list) {
+    public meal_past_order_adapter(ArrayList<meal_order> list) {
         List = list;
     }
 
@@ -39,7 +40,7 @@ public class meal_past_order_adapter extends RecyclerView.Adapter<meal_past_orde
         return List.size();
     }
 
-    public void setList(ArrayList<meal> moviesList) {
+    public void setList(ArrayList<meal_order> List) {
         this.List = List;
         notifyDataSetChanged();
     }

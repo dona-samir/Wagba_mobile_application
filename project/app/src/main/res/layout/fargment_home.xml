@@ -38,6 +38,12 @@
                 android:textStyle="bold" />
 
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/please_state_any_note_related_to_order" />
+
             <SearchView
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"

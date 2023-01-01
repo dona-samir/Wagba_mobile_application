@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.wagba.R;
 import com.example.wagba.ViewModel.registrationViewModel;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class login extends AppCompatActivity {
@@ -33,6 +34,14 @@ public class login extends AppCompatActivity {
         password_EditText =findViewById(R.id.login_Password);
         login_btn = findViewById(R.id.btn_login);
         signup=findViewById(R.id.login_signup);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null){
+
+            startActivity(new Intent(login.this, Main.class));
+            finish();
+        }
+
         RegistrationViewModel = new ViewModelProvider(this).get(registrationViewModel.class);
         RegistrationViewModel.getUserlivedata().observe(this, new Observer<FirebaseUser>() {
                     @Override
@@ -72,4 +81,9 @@ public class login extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        finish();
+        super.onStop();
+    }
 }

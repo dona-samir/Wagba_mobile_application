@@ -1,11 +1,10 @@
-package com.example.wagba.Model;
+package com.example.wagba.Repositories;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.example.wagba.database.*;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.wagba.Model.meal;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +40,6 @@ public class mealRepo
                         new_meal.setPrice(String.valueOf(userSnapshot.child("price").getValue()));
                         new_meal.setImg(String.valueOf(userSnapshot.child("img").getValue()));
                         meals.add(new_meal);
-                        Log.d("meals_adapteee",new_meal.toString());
                     }
                 }
                 onRealtimeDbTaskComplete.onSucesss(meals);
@@ -54,8 +52,8 @@ public class mealRepo
         });
     }
     public void getallData(String id ){
-        reference =reference.child(id);
-        reference.addValueEventListener(new ValueEventListener(){
+        DatabaseReference meal_reference =reference.child(id);
+        meal_reference.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ArrayList<meal> meals = new ArrayList<>();
@@ -68,7 +66,6 @@ public class mealRepo
                     new_meal.setPrice(String.valueOf(userSnapshot.child("price").getValue()));
                     new_meal.setImg(String.valueOf(userSnapshot.child("img").getValue()));
                     meals.add(new_meal);
-                    Log.d("meals_adapteee",new_meal.toString());
                 }
 
                 onRealtimeDbTaskComplete.onSucesss(meals);

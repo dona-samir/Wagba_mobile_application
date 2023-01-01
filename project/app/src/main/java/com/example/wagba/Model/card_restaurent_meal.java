@@ -1,4 +1,4 @@
-package com.example.wagba.database;
+package com.example.wagba.Model;
 
 public class card_restaurent_meal {
     private String name;

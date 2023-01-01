@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wagba.Model.card_restaurent_meal;
 import com.example.wagba.R;
-import com.example.wagba.database.*;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

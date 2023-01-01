@@ -15,9 +15,10 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/profile_picture"
-            android:layout_width="260dp"
-            android:layout_height="260dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="5"
             app:cardBackgroundColor="@color/offwhite"
@@ -32,8 +33,8 @@
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="center"
-                android:src="@drawable/profile" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo" />
 
         </androidx.cardview.widget.CardView>
 
@@ -42,15 +43,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_weight="5"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_picture">
 
             <TextView
-                android:id="@+id/user_name"
+                android:id="@+id/profilr_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -62,7 +63,17 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="xxpxxxx@eng.asu.edu.eg"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/profile_phone_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -72,13 +83,13 @@
                 android:textSize="14sp" />
 
             <Button
-                android:id="@+id/track_order"
+                android:id="@+id/profile_track_order"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/yellow"
-                android:padding="15dp"
+                android:padding="10dp"
                 android:text="track order " />
 
             <Button
@@ -88,7 +99,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/yellow"
-                android:padding="15dp"
+                android:padding="10dp"
                 android:text="Signout" />
         </LinearLayout>
 
