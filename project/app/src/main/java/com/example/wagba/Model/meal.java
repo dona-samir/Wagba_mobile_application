@@ -5,6 +5,7 @@ public class meal extends card_restaurent_meal {
     private String price;
     private String id;
     private String restaurant_id;
+    private int available;
 
     public meal (){};
     public meal(String name, String details, String img) {
@@ -16,6 +17,14 @@ public class meal extends card_restaurent_meal {
         this.id = id;
         this.restaurant_id = restaurant_id;
         this.price = price;
+    }
+
+    public int getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(int available) {
+        this.available = available;
     }
 
     public String getId() {
@@ -44,10 +53,11 @@ public class meal extends card_restaurent_meal {
 
     @Override
     public String toString() {
-        return "meal{" +super.toString()+
+        return "meal{" +
                 "price='" + price + '\'' +
                 ", id='" + id + '\'' +
                 ", restaurant_id='" + restaurant_id + '\'' +
+                ", available=" + available +
                 '}';
     }
 }

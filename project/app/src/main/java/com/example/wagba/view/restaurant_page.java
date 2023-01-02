@@ -150,9 +150,14 @@ public class restaurant_page extends Fragment {
                 meals_ad.setListener(new meal_adapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(int position) {
-                        if(meals!=null){
-                            ordermeal.add(meals.get(position));
-                            Toast.makeText(getActivity(),meals.get(position).getName() +" add to cart", Toast.LENGTH_SHORT).show();
+                        if(meals!=null) {
+                            if (meals.get(position).getAvailable() == 0) {
+                                Toast.makeText(getActivity(), "sorry this " +meals.get(position).getName() +"is not available" , Toast.LENGTH_LONG).show();
+
+                            } else {
+                                ordermeal.add(meals.get(position));
+                                Toast.makeText(getActivity(), meals.get(position).getName() + " add to cart", Toast.LENGTH_LONG).show();
+                            }
                         }
                     }
                 });

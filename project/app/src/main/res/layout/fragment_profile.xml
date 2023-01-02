@@ -6,28 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".view.profile">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/offwhite"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/profile_picture"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="209dp"
+            android:layout_height="209dp"
+            android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="5"
             app:cardBackgroundColor="@color/offwhite"
-            app:cardCornerRadius="200dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18">
+            app:cardCornerRadius="209dp">
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -38,70 +35,57 @@
 
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
+        <TextView
+            android:id="@+id/profilr_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="NAME"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="xxpxxxx@eng.asu.edu.eg"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/profile_phone_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="xxpxxxx@eng.asu.edu.eg"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/profile_track_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.551"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_picture">
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/yellow"
+            android:padding="10dp"
+            android:text="track order " />
 
-            <TextView
-                android:id="@+id/profilr_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:padding="10dp"
-                android:text="NAME"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/signout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/yellow"
+            android:padding="10dp"
+            android:text="Signout" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/profile_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="xxpxxxx@eng.asu.edu.eg"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/profile_phone_no"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:text="xxpxxxx@eng.asu.edu.eg"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/profile_track_order"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/yellow"
-                android:padding="10dp"
-                android:text="track order " />
-
-            <Button
-                android:id="@+id/signout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/yellow"
-                android:padding="10dp"
-                android:text="Signout" />
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

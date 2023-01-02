@@ -49,7 +49,6 @@
     <string name="delivered">Delivered</string>
     <!--    <string name="please_state_any_note_related_to_order">Please, be noted there is only  two delivery times 12:00 noon and 3:00 pm any for now you are required to place order 2 hour earlier 10:00 am to deliver order at 12:00 noon &amp; 1:00pm to deliver order at 3:00 pm</string>-->
     <string name="please_state_any_note_related_to_order">place order at 10:00 am to deliver order at 12:00 noon &amp; or at 1:00pm to deliver order at 3:00 pm</string>
-
     <string name="notes">Notes</string>
     <string name="order_tracking">Order Tracking</string>
     <string name="home">Home</string>

@@ -36,6 +36,7 @@ public class mealRepo
                         new_meal.setRestaurant_id(String.valueOf(userSnapshots.getKey()));
                         new_meal.setId(String.valueOf(userSnapshot.getKey()));
                         new_meal.setName(String.valueOf(userSnapshot.child("name").getValue()));
+                        new_meal.setAvailable(userSnapshot.child("available").getValue(Integer.class));
                         new_meal.setDetails(String.valueOf(userSnapshot.child("details").getValue()));
                         new_meal.setPrice(String.valueOf(userSnapshot.child("price").getValue()));
                         new_meal.setImg(String.valueOf(userSnapshot.child("img").getValue()));
@@ -65,6 +66,7 @@ public class mealRepo
                     new_meal.setDetails(String.valueOf(userSnapshot.child("details").getValue()));
                     new_meal.setPrice(String.valueOf(userSnapshot.child("price").getValue()));
                     new_meal.setImg(String.valueOf(userSnapshot.child("img").getValue()));
+                    new_meal.setAvailable(userSnapshot.child("available").getValue(Integer.class));
                     meals.add(new_meal);
                 }
 

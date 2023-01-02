@@ -1,5 +1,6 @@
 package com.example.wagba.view;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wagba.R;
@@ -56,6 +58,9 @@ public class meal_adapter extends RecyclerView.Adapter<meal_adapter.Viewholder> 
         holder.details.setText(List.get(position).getDetails());
         Picasso.get().load(List.get(position).getImg()).into(holder.img);
         holder.price.setText(List.get(position).getPrice());
+        if(List.get(position).getAvailable()==0){
+           holder.btn.setBackgroundColor(Color.parseColor("#FFBD8C2C"));
+        }
     }
 
     @Override
