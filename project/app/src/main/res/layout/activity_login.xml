@@ -69,17 +69,6 @@
         app:cornerRadius="15dp" />
 
     <TextView
-        android:id="@+id/forget"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:elegantTextHeight="true"
-        android:gravity="center"
-        android:text="@string/forget"
-        android:textAlignment="center"
-        android:textIsSelectable="false" />
-
-    <TextView
         android:id="@+id/login_signup"
         android:layout_width="match_parent"
         android:layout_height="0dp"

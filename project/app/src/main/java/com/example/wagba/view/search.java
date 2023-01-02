@@ -117,7 +117,11 @@ public class search extends Fragment {
                                                   }
                                                   Collections.shuffle(searchresult);
                                                   search_ad.notifyDataSetChanged();
-                                                  Log.d("heyyyyy", searchresult.toString());
+                                                  if(searchresult.isEmpty()){
+                                                      nosearch nosearch = new nosearch();
+                                                      getParentFragmentManager().beginTransaction().add(R.id.container , nosearch).addToBackStack(null).commit();
+
+                                                  }
                                                   return false;
                                               }
 

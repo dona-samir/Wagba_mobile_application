@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +33,7 @@ import com.example.wagba.ViewModel.resturantViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -84,7 +86,6 @@ public class Cart extends Fragment {
         super.onCreate(savedInstanceState);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-        Log.d("ordermeal",ordermeals.toString());
 
     }
 
@@ -95,18 +96,34 @@ public class Cart extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         if(counted!=null){counted.clear();}
         if (ordermeals != null ) {
             if (!ordermeals.isEmpty()){
             counted = ordermeals.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        }else{
-                Log.d("heyy","ana ");
+            }else{
+//                cartliveViewModel = new ViewModelProvider(Cart.this).get(cartliveViewModel.class);
+//                LiveData<DataSnapshot> liveData = cartliveViewModel.getCart();
+//                liveData.observe(getViewLifecycleOwner(), new Observer<DataSnapshot>() {
+//
+//                    @Override
+//                    public void onChanged(DataSnapshot dataSnapshot) {
+//                        if (dataSnapshot != null) {
+//                            for (DataSnapshot dataSnapshott : dataSnapshot.getChildren()) {
+//                            }
+//                        }else{
+//                            empty_cart empty_cart = new empty_cart();
+//                            getParentFragmentManager().beginTransaction().replace(R.id.container , empty_cart).commit();
+//
+//                        }
+//                    }
+//                });
                 cartViewModel = new ViewModelProvider(this).get(cartViewModel.class);
                 cartViewModel.getAllData();
                 cartViewModel.getcart_dataMutable().observe(getViewLifecycleOwner(), new Observer<cart_data>() {
                     @Override
                     public void onChanged(cart_data cart_data) {
-                        Log.d("heyy","ana 22");
+                        Log.d("fsffff",cart_data.toString());
 
                         for (meal_order meal_order:cart_data.getMeals_order() ) {
                             meal meal = new meal();
@@ -131,6 +148,13 @@ public class Cart extends Fragment {
                         }
                     }
                 });
+                if(ordermeals != null){
+                    if(ordermeals.size()==0) {
+                        Log.d("cjc", "onViewCreated: gukg");
+                        empty_cart empty_cart = new empty_cart();
+                        getParentFragmentManager().beginTransaction().replace(R.id.container, empty_cart).commit();
+                    }
+                }
             }
         } else{
             Log.d("fsf","fyug");
@@ -164,6 +188,11 @@ public class Cart extends Fragment {
                     }
                 }
             });
+            if(counted.isEmpty() ){
+                empty_cart empty_cart = new empty_cart();
+                getParentFragmentManager().beginTransaction().replace(R.id.container , empty_cart).addToBackStack(null).commit();
+
+            }
         }
             add_to_card_adapter meals_ad = new add_to_card_adapter(counted);
             name = view.findViewById(R.id.add_to_cart_resturant_title);
@@ -230,28 +259,42 @@ public class Cart extends Fragment {
                         cart_total.setText(String.valueOf(cart.getCart_total()));
                         delivery.setText(String.valueOf(cart.getDelivery_fee()));
                         total.setText(String.valueOf(cart.getTotal()));
+                        if(meals_ad.getItemCount()==0){
+                            Log.d("SDcsd", "onItemClick: dcfsd");
+                            empty_cart empty_cart = new empty_cart();
+                            getParentFragmentManager().beginTransaction().replace(R.id.container , empty_cart).addToBackStack(null).commit();
+                        }
 
                     } else {
+
                         ordermeals.clear();
                         counted.clear();
                     }
                 }
             });
-            resturantViewModel.getAllData(ordermeals.get(0).getRestaurant_id());
-            resturantViewModel.getResturants().observe(getViewLifecycleOwner(), new Observer<ArrayList<restaurant>>() {
-                @Override
-                public void onChanged(ArrayList<restaurant> restaurants) {
-                    if (restaurants != null) {
-                        restaurants_list = restaurants;
-                        name.setText(restaurants.get(0).getName());
-                        cart = new cart_data(ordermeals, restaurants);
-                        cart.setDelivery_fee(Double.valueOf(restaurants.get(0).getDelivery_fee()));
-                        cart_total.setText(String.valueOf(cart.getCart_total()));
-                        delivery.setText(String.valueOf(cart.getDelivery_fee()));
-                        total.setText(String.valueOf(cart.getTotal()));
+            if(ordermeals.size() >0) {
+                resturantViewModel.getAllData(ordermeals.get(0).getRestaurant_id());
+                resturantViewModel.getResturants().observe(getViewLifecycleOwner(), new Observer<ArrayList<restaurant>>() {
+                    @Override
+                    public void onChanged(ArrayList<restaurant> restaurants) {
+                        if (restaurants != null) {
+                            if (!restaurants.isEmpty()) {
+                                restaurants_list = restaurants;
+                                name.setText(restaurants.get(0).getName());
+                                cart = new cart_data(ordermeals, restaurants);
+                                cart.setDelivery_fee(Double.valueOf(restaurants.get(0).getDelivery_fee()));
+                                cart_total.setText(String.valueOf(cart.getCart_total()));
+                                delivery.setText(String.valueOf(cart.getDelivery_fee()));
+                                total.setText(String.valueOf(cart.getTotal()));
+                            }
+                        }
                     }
-                }
-            });
+                });
+            }else{
+                empty_cart empty_cart = new empty_cart();
+                getParentFragmentManager().beginTransaction().add(R.id.container , empty_cart).addToBackStack(null).commit();
+
+            }
 
 
             recyclerView = view.findViewById(R.id.order_details_container);

@@ -102,13 +102,19 @@ public class Home extends Fragment {
                         search.add(meal);
                     }
                 }
-                search searchpage = new search(ordermeal);
-                searchpage.setRestaurantslist(restaurantslist);
-                searchpage.setMealslist(mealslist);
-                Collections.shuffle(search);
-                searchpage.setSearchresult(search);
-                getParentFragmentManager().beginTransaction().replace(R.id.container, searchpage).commit();
-                return false;
+                if(search.isEmpty()){
+                    nosearch nosearch = new nosearch();
+                    getParentFragmentManager().beginTransaction().replace(R.id.container , nosearch).addToBackStack(null).commit();
+                    return false;
+                }else {
+                    search searchpage = new search(ordermeal);
+                    searchpage.setRestaurantslist(restaurantslist);
+                    searchpage.setMealslist(mealslist);
+                    Collections.shuffle(search);
+                    searchpage.setSearchresult(search);
+                    getParentFragmentManager().beginTransaction().replace(R.id.container, searchpage).addToBackStack(null).commit();
+                    return false;
+                }
             }
 
             @Override
@@ -138,7 +144,7 @@ public class Home extends Fragment {
                             restaurant_page restaurant_page = new restaurant_page();
                             restaurant_page.setmParam1(restaurants.get(position));
                             restaurant_page.setOrdermeal(ordermeal);
-                            getParentFragmentManager().beginTransaction().replace(R.id.container, restaurant_page).commit();
+                            getParentFragmentManager().beginTransaction().replace(R.id.container, restaurant_page).addToBackStack(null).commit();
                         }
                     }
                 });
@@ -163,7 +169,7 @@ public class Home extends Fragment {
                             restaurant_page.setmParam1(restaurantslist.get((Integer.valueOf(meals.get(position).getRestaurant_id()))));
                             restaurant_page.setOrdermeal(ordermeal);
 
-                            getParentFragmentManager().beginTransaction().replace(R.id.container, restaurant_page).commit();
+                            getParentFragmentManager().beginTransaction().replace(R.id.container, restaurant_page).addToBackStack(null).commit();
                         }
                     }
                 });

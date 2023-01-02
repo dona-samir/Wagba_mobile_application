@@ -32,7 +32,8 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:elevation="12dp"
-                    app:cardBackgroundColor="@color/offwhite"
+                    android:padding="6dp"
+                    app:cardBackgroundColor="@color/darkoffwhite"
                     app:cardCornerRadius="40dp">
 
                     <ImageView
@@ -40,10 +41,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:contentDescription="TODO"
-                        android:padding="15dp"
-                        android:scaleType="centerCrop"
-                        tools:ignore="ImageContrastCheck"
-                        tools:srcCompat="@drawable/bag_color_lineal_svgrepo_com" />
+                        android:padding="7dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/bag_color_lineal_svgrepo_com"
+                        tools:ignore="ImageContrastCheck" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -358,19 +359,6 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/order_page_place_order"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/order_page_total_price"
-                    android:layout_alignEnd="@id/order_page_total_price"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:minHeight="48dp"
-                    android:padding="15dp"
-                    android:text="@string/place_order" />
 
                 <View
                     android:id="@+id/line_pay"
